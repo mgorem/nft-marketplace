@@ -1,4 +1,4 @@
-require("@nomicfoundation/hardhat-waffle");
+require("@nomiclabs/hardhat-waffle");
 
 const projectId = "a4905e3b34cc498aa5a839bbcf49b8f2";
 const fs = require("fs");
@@ -14,10 +14,10 @@ module.exports = {
       url: `https://polygon-mumbai.infura.io/v3/${projectId}`,
       accounts: [privateKey],
     },
-    mainnet: {
-      // url: "https://polygon-mumbai.infura.io/v3/a4905e3b34cc498aa5a839bbcf49b8f2",
-      // accounts: [],
-    },
+    // mainnet: {
+    //   // url: "https://polygon-mumbai.infura.io/v3/a4905e3b34cc498aa5a839bbcf49b8f2",
+    //   // accounts: [],
+    // },
   },
   solidity: "0.8.9",
 };
