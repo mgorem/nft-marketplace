@@ -6,13 +6,15 @@ import "@openzeppelin/contracts/token/ERC721/ERC721.sol"; // ERC721 standard
 import "@openzeppelin/contracts/token/ERC721/extensions/ERC721URIStorage.sol"; // Extensio for ERC721 storage to set the token URI
 import "@openzeppelin/contracts/utils/Counters.sol"; // Utility for incrementing numbers
 
-contract NFT is ERC721URIStorage {
-    using Counters for Counters.Counter; // use Counters utility to declare a variable that  creates tokenIds
-    Counters.Counter private _tokenIds;
-    address contractAddress; // address of the marketplace that we want to allow the nft to be able to interact with or vice versa.
+import "hardhat/console.sol";
 
-    constructor(address marketPlaceAddress) ERC721("Slimdex Tokens", "SDX") {
-        contractAddress = marketPlaceAddress;
+contract NFT is ERC721URIStorage {
+    using Counters for Counters.Counter;
+    Counters.Counter private _tokenIds;
+    address contractAddress;
+
+    constructor(address marketplaceAddress) ERC721("Metaverse Tokens", "METT") {
+        contractAddress = marketplaceAddress;
     }
 
     function createToken(string memory tokenURI) public returns (uint) {
